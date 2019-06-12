@@ -1,0 +1,55 @@
+.bigbox{
+    width: 100%;
+}
+.dingbulan{
+    width: 100%;
+    background-color: #0089dc;
+}
+.dingbuwenzi{
+    margin: 0px auto;
+    width: 68%;
+}
+.dingdanxinxi{
+    width: 100%;
+    background-color: #0089dc;
+}
+.dingbuxinxineibu{
+    padding-top: 0.5%;
+    width: 68%;
+    margin: 0px auto;
+}
+.dingbuxinxinneibuyouce{
+    width: 500px;
+    float: right;
+}
+.guizezhongxin{
+    float: right;
+}
+
+.zhongjianzuoyou{
+    width: 100%;
+}
+.zuobiankuang{
+    width: 68%;
+    margin: 0px auto;
+}
+.youbiankuang{
+    float: right;
+    width: 65%;
+    margin-top: 2%;
+}
+.dingdanxiangqing{
+    clear: both;
+    float: left;
+    width: 31%;
+    margin-top: 2%;
+}
+
+.el-dropdown-link {
+    margin-right:0px;
+    cursor: pointer;
+    color: #fff;
+}
+.el-icon-arrow-down {
+    font-size: 12px;
+}

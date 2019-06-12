@@ -1,0 +1,110 @@
+a{
+    text-decoration: none;
+}
+.bigbix{
+    width: 100%;
+}
+.cebianlan{
+    width: 35px;
+    float: left;
+    background-color: #504d53;
+    height: 100%;
+    position: fixed;
+    right: 0px;
+}
+.sousuokuang{
+    height: 100px;
+}
+.fenlei{
+    background-color: #fff;
+}
+.shangpin{
+    background-color: #fff;
+}
+.shangjiafenlei{
+    padding-top: 1%;
+    width: 68%;
+    margin: 0px auto;
+}
+.shangpinfenlei{
+    padding-top: 1%;
+    width: 68%;
+    margin: 0px auto;
+}
+.sousuoleft{
+    padding-top: 1%;
+    margin: 0px auto;
+    width: 68%;
+}
+.sousuoright{
+    background-color: #DCDFE6;
+    padding-top: 1%;
+    margin: 0px auto;
+    width: 68%;
+}
+.el-input{
+    float: right;
+    right: 0px;
+    width: 20%;
+}
+.el-button{;
+    border: 0px;
+    background-color: #1e89e0;
+}
+.toolbar-middle{
+    position: absolute;
+    width: 35px;
+    top: 50%;
+    margin-top: -220px;
+}
+.toolbar-bottom{
+    bottom: 50px;
+    position: absolute;
+}
+.daohang{
+    background-color: #1e89e0;
+}
+.jiazai{
+    background-color: #fff;
+}
+.jiazaigengduo{
+    height: 100%;
+    background-color: #fff;
+    width: 68%;
+    margin: 0px auto;
+}
+.el-menu-demo{
+    width: 68%  ;
+    margin: 0px auto;
+}
+.guizezhongxin{
+    float: right;
+    margin-top: 1.5%;
+}
+.el-dropdown-link {
+    cursor: pointer;
+    color: #fff;
+}
+.el-icon-arrow-down {
+    font-size: 12px;
+}
+.el-col {
+    margin: 0px auto;
+    border-radius: 4px;
+}
+.grid-content {
+    margin: 0px auto;
+    border-radius: 4px;
+    min-height: 36px;
+}
+.row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+}
+.rstblock-logo {
+    color: #999;
+    text-align: center;
+}
+.rstblock-logo-icon {
+    display: block;
+}

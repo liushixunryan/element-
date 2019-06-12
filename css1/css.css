@@ -1,0 +1,38 @@
+#hh{
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    left: 0px;
+    right: 0px;
+    bottom: 50%;
+    top: 0px;
+    margin:  auto;
+}
+.el-header {
+
+    color: #333;
+    text-align: center;
+    line-height: 10px;
+}
+.el-main {
+    line-height: 60px;
+    color: #333;
+    text-align: center;
+
+}
+#slb2{
+    width: 100%;
+}
+#slb3{
+    background-color: ghostwhite;
+    position: absolute;
+    height: 10%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+
+}
+.jiao{
+    text-align: center;
+}

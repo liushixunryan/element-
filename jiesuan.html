@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单信息</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="css/jiesuan.css">
+
+    <style>
+        #footer {
+
+            width: 80%;
+            margin: 0 auto;
+            padding: 6px;
+        }
+        #footer-left{
+            float: left;
+            width: 50%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .footer-div{
+            font-size: 0.8vw;
+            float: left;
+            margin-top: 1%;
+            margin-right: 20%;
+        }
+        .footer-div a{
+            color: darkgray;
+            font-size: 1.1vw;
+        }
+        #footer-right{
+            box-sizing: border-box;
+            border-left: 1px lightgray solid;
+            float: left;
+            width: 50%;
+            padding: 6px;
+        }
+        #footer-right1{
+            width: 50%;
+            float: left;
+            color: gray;
+            font-size: 1.2vw;
+            margin-top: 2vw;
+        }
+        #footer-a span {
+            color: gray;
+            font-size: 1vw;
+        }
+
+        #footer-b a {
+            color: darkgray;
+            font-size: 1vw;
+        }
+
+        #footer-b span {
+            color: darkgray;
+            font-size: 1vw;
+        }
+
+        #foot {
+            margin: 12px auto;
+            width: 8vw;
+            height: 3vw;
+        }
+        #footer-test{
+            background: whitesmoke;
+            text-align: center;
+            margin-top: 150px;
+            width: 100%;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+<div class="bigbox">
+    <div class="dingbulan">
+        <div class="dingbuwenzi">
+            <span style="color: #fff;font-size: 0.7vw">当前位置:</span>
+            <a href="diandan.html" style="text-decoration: none;font-size: 0.7vw;color: #fff"> 辽宁金融职业学院></a>
+            <a href="gwc.html" style="color: #fff;font-size: 0.7vw;text-decoration: none">猫小姐水果捞></a>
+            <span style="color: #fff;font-size: 0.7vw">订单信息</span>
+
+            <div class="guizezhongxin">
+                <el-dropdown slot="dropdown">
+                        <span class="el-dropdown-link">
+                        初晞吖<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item><a href="https://www.ele.me/profile/"><i class="glyphicon glyphicon-user"
+                                                                                   style="color:#666">个人中心</i></a>
+                        </el-dropdown-item>
+                        <el-dropdown-item><a href="https://www.ele.me/profile/"><i class="glyphicon glyphicon-star"
+                                                                                   style="color:#666">我的收藏</i></a>
+                        </el-dropdown-item>
+                        <el-dropdown-item><a href="https://www.ele.me/profile/"><i
+                                class="glyphicon glyphicon-map-marker"
+                                style="color:#666">我的地址</i></a>
+                        </el-dropdown-item>
+                        <el-dropdown-item><a href="https://www.ele.me/profile/"><i class="glyphicon glyphicon-cog"
+                                                                                   style="color:#666">安全设置</i></a>
+                        </el-dropdown-item>
+                        <el-dropdown-item divided><a href="https://www.ele.me/profile/"><i
+                                class="glyphicon glyphicon-off"
+                                style="color:#666">退出登录</i></a></el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </div>
+
+        </div>
+    </div>
+    <div class="dingdanxinxi">
+        <div class="dingbuxinxineibu">
+            <a href="diandan.html"><img src="img/dingdanxinxitu.png" style="margin-bottom: 20px"></a>
+            <span style="font-size: 40px;color: #fff;">|</span>
+            <span style="font-size: 1.5vw;color: #fff;margin-top: 500px">&nbsp订单信息</span>
+
+            <div class="dingbuxinxinneibuyouce">
+                <img src="img/jindutiao.png" alt="" style="margin-top: 20px">
+            </div>
+        </div>
+    </div>
+
+    <div class="zhongjianzuoyou">
+        <div class="zuobiankuang">
+            <div class="dingdanxiangqing">
+                <div style="background-color:#fff">
+                    <span style="font-size: 0.9vw;font-weight: bold;margin-left: 3%">订单详情</span>
+                    <a href="#" style="color: #666;text-decoration: none;float: right;">< 返回商家修改</a>
+                </div>
+                <div class="fenge" style="margin-top: 5%">
+                    <el-row>
+                        <el-col :span="12"><div class="grid-content" style="color: #666">商品</div></el-col>
+                        <el-col :span="6"><div class="grid-content" style="color: #666">份数</div></el-col>
+                        <el-col :span="6"><div class="grid-content" style="color: #666">小计（元）</div></el-col>
+                    </el-row>
+                </div>
+                <div style="margin-top: 5%"><span style="font-size: 0.8vw;font-weight: bold">一号购物车</span></div>
+                <div class="fenge1" style="margin-top: 5%;">
+                    <el-row>
+                        <el-col :span="12"><div class="grid-content"> 尝鲜水果捞奶茶套餐</div></el-col>
+                        <el-col :span="6"><div class="grid-content">
+                            <el-input-number size="mini" v-model="num1" @change="handleChange" min="0":max="9"style="width: 80px"></el-input-number>
+                        </div></el-col>
+                        <el-col :span="6"><div class="grid-content" style="text-align: right">¥21.90</div></el-col>
+                    </el-row>
+                </div>
+                <div class="fenge2" style="margin-top: 5%;">
+                    <el-row>
+                        <el-col :span="12"><div class="grid-content"> 蜡笔小新小圆子</div></el-col>
+                        <el-col :span="6"><div class="grid-content">
+                            <el-input-number size="mini" v-model="num1" @change="handleChange" min="0":max="9"style="width: 80px"></el-input-number>
+                        </div></el-col>
+                        <el-col :span="6"><div class="grid-content" style="text-align: right">¥6.90</div></el-col>
+                    </el-row>
+                </div>
+                <div style="color: #666 ;font-size: 0.9vw;text-align: right;">¥</div>
+                <div class="fenge3" style="margin-top: 5%;">
+                    <el-row>
+                        <el-col :span="12"><div class="grid-content"> 餐盒</div></el-col>
+                        <el-col :span="6"><div class="grid-content">&nbsp</div></el-col>
+                        <el-col :span="6"><div class="grid-content" style="text-align: right">¥2.60</div></el-col>
+                    </el-row>
+                </div>
+
+                <div class="fenge4" style="margin-top: 6% ;text-align: right">
+                    <p style="color: #f74342;font-size: 2.6vw;text-align: right">¥27.58</p>
+                    <p style="color: #666;font-size: 0.5vw;text-align: right">共2份商品</p>
+
+                </div>
+            </div>
+
+            <div class="youbiankuang">
+                <div style="background-color:#fff">
+                    <span style="font-size: 0.9vw;font-weight: bold;margin-left: 3%">收货地址</span>
+                    <a href="#" style="color: #3a8ee6;float: right;">添加新地址</a>
+                </div>
+                <div class="tanchuan">
+                    <button style="text-align: center;width: 100%;height: 65px;background-color:#f1f1f1;border: 0px;margin-top: 2%">
+                        <template>
+                            <el-button type="text" @click="open3" style="color: black">+添加新地址</el-button>
+                        </template>
+                    </button>
+                </div>
+                <div style="margin-top: 2%">
+                    <span style="font-size: 0.9vw;font-weight: bold;margin-left: 3%">付款方式</span>
+                    <span style="font-size: 0.5vw;;margin-left: 3%;color: #ff9c00;">推荐使用在线支付，不用找零，优惠更多</span>
+                </div>
+                <div style="margin-top: 2%">
+                    <img src="img/zaixianzhifu.png"  alt="">
+                </div>
+
+                <div style="margin-top: 2%">
+                    <span style="font-size: 0.9vw;font-weight: bold;margin-left: 3%">选择优惠</span>
+                </div>
+
+                <div style="margin-top: 2%">
+                    <span style="font-size: 0.7vw;margin-left: 3%">使用红包</span>
+                    <span style="font-size: 0.7vw;margin-left: 3%;color: #666">无可用红包</span>
+                </div>
+                <div style="margin-top: 2%">
+                    <span style="font-size: 0.7vw;margin-left: 3%">使用优惠券</span>
+                    <span style="font-size: 0.7vw;margin-left: 3%;color: #666">网站不支持</span>
+                    <span style="font-size: 0.7vw;margin-left: 3%;color: #f74342">（仅手机客户端可用)</span>
+                </div>
+                <div style="margin-top: 2%">
+                    <span style="font-size: 0.9vw;font-weight: bold;margin-left: 3%">其他信息</span>
+                </div>
+                <div style="margin-top: 2%">
+                    <span style="font-size: 0.7vw;margin-left: 3%">配送方式</span>
+                    <span style="font-size: 0.7vw;margin-left: 3%;color: #666">本订单由 <span style="color: #3a8ee6">[蜂鸟专送]</span> 提供配送</span>
+                </div>
+                <div style="margin-top: 2%" class="xiaoxitishi">
+                    <span style="font-size: 0.7vw;margin-left: 3%">送达时间</span>
+                    <span style="font-size: 0.7vw;margin-left: 3%;color: #666">
+                        <el-dropdown>
+                          <el-button type="primary" style="color: #666;background-color: #fff">
+                            立即送达
+                              <i class="el-icon-arrow-down el-icon--right"></i>
+                          </el-button>
+                          <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>立即送达</el-dropdown-item>
+                            <el-dropdown-item>半小时后</el-dropdown-item>
+                            <el-dropdown-item>一小时后</el-dropdown-item>
+                            <el-dropdown-item>两小时后</el-dropdown-item>
+                            <el-dropdown-item>三小时后</el-dropdown-item>
+                          </el-dropdown-menu>
+                        </el-dropdown>
+                    </span>
+                </div>
+                <div style="margin-top: 2%">
+                    <span style="font-size: 0.7vw;margin-left: 3%">发票信息</span>
+                    <span style="font-size: 0.7vw;margin-left: 3%;color: #666;background-color: #e0e0e0">仅在饿了么 APP 中支持开发票哦</span>
+                </div>
+                <div style="margin-top: 2%">
+                    <span style="font-size: 0.7vw;margin-left: 3%">订单备注</span>
+                    <span style="font-size: 0.7vw;margin-left: 3%"><input type="text"></span>
+                </div>
+                <div style="margin-top: 2%" class="tupianjia">
+                    <span style="font-size: 0.7vw;margin-left: 3%">餐具份数</span>
+                    <span style="font-size: 0.7vw;margin-left: 3%">
+                        <span style="font-size: 0.7vw;margin-left: 3%;color: #666">
+                        <img src="img/green-leaf.e6e9f2.png" alt="">
+                        <el-dropdown>
+                          <el-button type="primary" style="color: #666;background-color: #fff">
+                            无需餐具
+                              <i class="el-icon-arrow-down el-icon--right"></i>
+                          </el-button>
+                          <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>无需餐具</el-dropdown-item>
+                            <el-dropdown-item>1份</el-dropdown-item>
+                            <el-dropdown-item>2份</el-dropdown-item>
+                            <el-dropdown-item>3份</el-dropdown-item>
+                            <el-dropdown-item>4份</el-dropdown-item>
+                          </el-dropdown-menu>
+                        </el-dropdown>
+                    </span>
+                    </span>
+                </div>
+
+                <div style="margin-top: 5%" class="ddddddd">
+                    <a href="zhujiemian.html"> <button style="background-color: #f74342;color: #fff;margin-left: 3%;width: 150px;height: 45px;border: 0px;font-size: 1vw">确认下单</button></a>
+                    <a href="#" style="float: right">
+                        <el-tooltip placement="top">
+                            <div slot="content"><img src="img/appqc.95e532.png"></div>
+                            <el-button><i class="el-icon-mobile-phone" style="color:#666">扫码下载APP
+                                <br>
+                                APP下单立享优惠</i></el-button>
+                        </el-tooltip>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+<div style="float: bottom;margin-top: 45%">
+    <hr style="margin: 24px auto">
+    <div id="footer">
+        <div id="footer-left">
+            <div class="footer-div">
+                <span>用户帮助</span><br>
+                <a href="" style="font-size: 0.5px">我的客服</a>
+            </div>
+            <div class="footer-div">
+                <span>商务合作</span><br>
+                <a href="" style="font-size: 0.5px">我要开店</a><br>
+                <a href="" style="font-size: 0.5px">加盟指南</a><br>
+                <a href="" style="font-size: 0.5px">市场合作</a><br>
+                <a href="" style="font-size: 0.5px">开放平台</a>
+            </div>
+            <div class="footer-div">
+                <span>关于我们</span><br>
+                <a href="" style="font-size: 0.5px">饿了么介绍</a><br>
+                <a href="" style="font-size: 0.5px">加入我们</a><br>
+                <a href="" style="font-size: 0.5px">联系我们</a><br>
+                <a href="" style="font-size: 0.5px">规则中心</a><br>
+                <a href="" style="font-size: 0.5px">隐私政策</a>
+            </div>
+        </div>
+        <div id="footer-right">
+            <div id="footer-right1">
+                <span style="font-size: 0.8vw">24小时客服热线：10105757</span><br>
+                <span style="font-size: 0.8vw">关注我们:</span>
+                <a><img style="width: 1.5vw;height: 1.5vw" src="img/wexin.PNG" alt=""></a>
+                <a><img style="width: 1.5vw;height: 1.5vw" src="img/weibo.PNG" alt=""></a>
+            </div>
+            <div style="width: 50%;float: left">
+                <a><img style="width: 35%;float: left" src="img/appqc.95e532.png"></a>
+                <h3 style="float: left;margin-top: 5%;margin-left: 10%; font-size: 1vw;font-weight: bold">下载手机版</h3><br><br><br>
+                <span style="color: gray;font-size: 0.5vw;margin-left: 10%">扫一扫，手机订餐方便</span>
+            </div>
+        </div>
+    </div>
+    <div id="footer-test">
+        <div id="footer-a">
+            <br>
+            <span style="color: black;font-size: 0.5vw" >所有方：上海拉扎斯信息科技有限公司&nbsp;|&nbsp;营业执照</span>
+        </div>
+        <div id="footer-b">
+            <span style="font-size: 0.5vw">增值信息业务许可证:</span>
+            <a href="" style="font-size: 0.5vw">沪B2-20150033</a>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <a href="" style="font-size: 0.5vw">沪ICP备09007032</a>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <a href="" style="font-size: 0.5vw">上海工商行政管理</a>
+            <span style="font-size: 0.5vw">Copyright ?2008-2018 上海拉扎斯信息科技有限公司, All Rights Reserved.</span>
+        </div>
+        <div id="foot"><a href="#"><img style="width: 50%;height: 50%" src="img/picp_bg.e373b3.jpg"></a></div>
+    </div>
+</div>
+</div>
+<script>
+    new Vue({
+        el: ".dingbuwenzi",
+        data() {
+            return {
+                activeIndex: '1',
+                activeIndex2: '1'
+            };
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            }
+        }
+    })
+    new Vue({
+        el:".dingbuxinxinneibuyouce"
+    })
+    new Vue({
+        el:".fenge"
+    })
+    new Vue({
+        el:".fenge1",
+        data() {
+            return {
+                num1: 1
+            };
+        },
+        methods: {
+            handleChange(value) {
+                console.log(value);
+            }
+        }
+    })
+    new Vue({
+        el:".fenge2",
+        data() {
+            return {
+                num1: 1
+            };
+        },
+        methods: {
+            handleChange(value) {
+                console.log(value);
+            }
+        }
+    })
+    new Vue({
+        el:".fenge3"
+    })
+    new Vue({
+        el:".tanchuan",
+
+        methods: {
+            open3() {
+                this.$prompt('请输入邮箱', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
+                    inputErrorMessage: '邮箱格式不正确'
+                }).then(({ value }) => {
+                    this.$message({
+                        type: 'success',
+                        message: '你的邮箱是: ' + value
+                    });
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: '取消输入'
+                    });
+                });
+            }
+        }
+
+    })
+
+    new Vue({
+        el:".xiaoxitishi",
+        methods: {
+            handleClick() {
+                alert('button click');
+            }
+        }
+    })
+    new Vue({
+        el:".tupianjia",
+        methods: {
+            handleClick() {
+                alert('button click');
+            }
+        }
+    })
+    new Vue({
+        el:".ddddddd",
+    })
+
+
+</script>
+</body>
+</html>

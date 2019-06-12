@@ -1,0 +1,73 @@
+#gwc{
+    width: 80%;
+    margin: 0px auto;
+
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#maoxiaojie{
+    background-image: url("../img/maoxiaojie.webp");
+}
+#gwc2{
+    width: 80%;
+
+    margin: 0px auto;
+    position: relative;
+}
+#gwc3{
+    width: 100%;
+    height: 700px;
+    background-color: ghostwhite;
+    margin: 0px auto;
+    position: relative;
+}
+.el-dropdown-link {
+    cursor: pointer;
+    color: white;
+}
+
+.el-icon-arrow-down {
+    font-size: 12px;
+}
+#dx{
+    background-image: url("../img/dx.jpg");
+}
+#gwc4{
+    background-color: gainsboro;
+
+}
+#anniu{
+    width: 100%;
+    height: 60px;
+}
+#top1{
+    background: rgba(0,0,0,0.4);
+
+}
+.jlgj{
+    padding-right: 20px;
+    display: inline-block;
+    padding-left: 10px;
+    border: 0px solid white;
+}
+.kuang1{
+    width: 50%;
+    float: left;
+}
+.button{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+.sllb{
+    display: inline;
+}
+.sb {
+    position: relative;
+
+}
+#sysp{
+    background-color: #333333;
+}

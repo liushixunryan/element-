@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="css/diandan.css">
+    <style>
+        #footer {
+            width: 80%;
+            margin: 0 auto;
+            padding: 6px;
+        }
+        #footer-left{
+            float: left;
+            width: 50%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .footer-div{
+            font-size: 0.8vw;
+            float: left;
+            margin-top: 1%;
+            margin-right: 20%;
+        }
+        .footer-div a{
+            color: darkgray;
+            font-size: 1.1vw;
+        }
+        #footer-right{
+            box-sizing: border-box;
+            border-left: 1px lightgray solid;
+            float: left;
+            width: 50%;
+            padding: 6px;
+        }
+        #footer-right1{
+            width: 50%;
+            float: left;
+            color: gray;
+            font-size: 1.2vw;
+            margin-top: 2vw;
+        }
+        #footer-a span {
+            color: gray;
+            font-size: 1vw;
+        }
+
+        #footer-b a {
+            color: darkgray;
+            font-size: 1vw;
+        }
+
+        #footer-b span {
+            color: darkgray;
+            font-size: 1vw;
+        }
+
+        #foot {
+            margin: 12px auto;
+            width: 8vw;
+            height: 3vw;
+        }
+        #footer-test{
+            background: whitesmoke;
+            text-align: center;
+            margin-top: 150px;
+            width: 100%;
+            height: 120px;
+        }
+    </style>
+
+
+</head>
+<body>
+<div class="bigbix">
+    <div class="cebianlan">
+        <div class="toolbar-tabs">
+            <div class="toolbar-middle">
+                <div>
+                    <el-tooltip class="item" effect="dark" content="我的订单" placement="left">
+                        <a href="#" style="padding-left: 35%;color: #fff"><span style="width: 35px"><i
+                                class="el-icon-tickets" style="width: 35px;line-height: 35px"></i></span></a>
+                    </el-tooltip>
+                </div>
+                <span style="color:#fff;margin-left: 30%">__</span><br><br>
+                <div>
+                    <a href="#" style="padding-left: 35%;color: #fff"><span style="width: 35px"
+                                                                            class="glyphicon glyphicon-shopping-cart"
+                                                                            aria-hidden="true"><br></br>购<br>物<br>车</span></a>
+                </div>
+                <span style="color:#fff;margin-left: 30%">__</span><br><br>
+                <div>
+                    <el-tooltip class="item" effect="dark" content="我的信息" placement="left">
+                        <a href="#" style="padding-left: 35%;color: #fff"><span style="width: 35px"><i
+                                class="el-icon-message" style="width: 35px;line-height: 35px"></i></span></a>
+                    </el-tooltip>
+                </div>
+            </div>
+            <div class="toolbar-bottom">
+                <el-tooltip placement="left-end">
+                    <div slot="content"><img src="img/appqc.95e532.png"></div>
+                    <a href="#" style="padding-left: 35%;color: #fff"><span style="width: 35px"><i
+                            class="el-icon-message" style="width: 35px;line-height: 35px"></i></span></a>
+                </el-tooltip>
+            </div>
+        </div>
+    </div>
+    <div class="daohang">
+        <el-menu
+                :default-active="activeIndex2"
+                class="el-menu-demo"
+                mode="horizontal"
+                @select="handleSelect"
+                background-color="#1e89e0"
+                text-color="#fff">
+            <el-menu-item index="4"><a href="https://www.ele.me" target="_blank"><img src="img/topbar-logo.png"></a>
+            </el-menu-item>
+            <el-menu-item index="4"><a href="https://www.ele.me" target="_blank" style="font-size: 17px">首页</a>
+            </el-menu-item>
+            <el-menu-item index="4"><a href="https://www.ele.me/profile/order" target="_blank" style="font-size: 17px">我的订单</a>
+            </el-menu-item>
+            <el-menu-item index="4"><a href="https://h5.ele.me/service/cooperation/" target="_blank"
+                                       style="font-size: 17px">加盟合作</a></el-menu-item>
+            <el-menu-item index="4"><a href="https://help.ele.me/pc/" target="_blank" style="font-size: 17px">我的客服</a>
+            </el-menu-item>
+            <div class="guizezhongxin">
+                <a href="https://h5.ele.me/service/agreement/#HEAEDER_SHOW=1"
+                   style="font-size: 14px;background-color: #1e89e0;color: #DCDFE6">
+                    规则中心
+                </a>
+                <a style="margin-left: 50px;font-size: 14px;color: #DCDFE6;margin-right: 100px" href="#">
+                    <el-tooltip placement="top">
+                        <div slot="content"><img src="img/appqc.95e532.png"></div>
+                        <el-button><i class="el-icon-mobile-phone" style="color:#fff">手机应用</i></el-button>
+                    </el-tooltip>
+                </a>
+
+                <el-dropdown slot="dropdown">
+                        <span class="el-dropdown-link">
+                        初晞吖<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item><a href="https://www.ele.me/profile/"><i class="glyphicon glyphicon-user"
+                                                                                   style="color:#666">个人中心</i></a>
+                        </el-dropdown-item>
+                        <el-dropdown-item><a href="https://www.ele.me/profile/"><i class="glyphicon glyphicon-star"
+                                                                                   style="color:#666">我的收藏</i></a>
+                        </el-dropdown-item>
+                        <el-dropdown-item><a href="https://www.ele.me/profile/"><i
+                                class="glyphicon glyphicon-map-marker"
+                                style="color:#666">我的地址</i></a>
+                        </el-dropdown-item>
+                        <el-dropdown-item><a href="https://www.ele.me/profile/"><i class="glyphicon glyphicon-cog"
+                                                                                   style="color:#666">安全设置</i></a>
+                        </el-dropdown-item>
+                        <el-dropdown-item divided><a href="https://www.ele.me/profile/"><i
+                                class="glyphicon glyphicon-off"
+                                style="color:#666">退出登录</i></a></el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </div>
+        </el-menu>
+    </div>
+    <div class="sousuokuang">
+        <div class="sousuoleft">
+            <div class="zuobian">
+                <span>当前位置:</span>
+                <a href="#" style="text-decoration: none">辽宁金融职业学院</a>
+                <a href="zhujiemian.html" style="text-decoration: none">[切换地址]</a>
+
+                <el-input placeholder="搜索商家,美食..." v-model="input5" class="input-with-select">
+                    <el-button slot="append" icon="el-icon-search"></el-button>
+                </el-input>
+            </div>
+
+        </div>
+    </div>
+    <div class="fenlei">
+        <div class="shangjiafenlei">
+            <div class="div" style="height: 100%;display: inline"><span>商家分类:</span></div>
+            <div style="display: inline">
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">全部商家</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">美食</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">快餐便当</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">特色菜系</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">异国料理</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">小吃夜宵</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">甜品饮品</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">果蔬生鲜</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">商店超市</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">鲜花绿植</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">医药健康</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">早餐</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">午餐</el-button>
+                <br><br>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw;margin-left: 5%">下午茶</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">晚餐</el-button>
+                <el-button size="small" style="background-color: #fff;font-size:0.7vw">夜宵</el-button>
+
+            </div>
+        </div>
+    </div>
+    <div class="shangpin">
+        <div class="shangpinfenlei">
+            <el-row :gutter="20">
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="张姐香肉饭(虎石台店)"
+                                width="200"
+                                trigger="hover"
+                                content="----电话18240370742赠饮500ml冰红茶本店可以送到交校楼下，干校上午都是进不去，送北门，下午尽量都送到寝室楼下！本店送餐不上楼，如果有特殊情况请点上楼费！  ">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/xiangroufan.jpg"
+                                                                             width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="瑞隆嘉嘉肉肉饭"
+                                width="200"
+                                trigger="hover"
+                                content="----配送说明：夜间配送费¥3.5">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/1551965032(1).jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="宏远狼的诱惑酱骨头"
+                                width="200"
+                                trigger="hover"
+                                content="----消费68送皮蛋豆腐,消费88送拌花菜,消费118送香辣牛板筋">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/jianggutou.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="鑫双玉饭店(虎石台店)"
+                                width="200"
+                                trigger="hover"
+                                content="----近期由于交校保安把守不让送餐，交校2,3,4,5,6,7,8,13号公寓白天不能送到寝室楼下，希望大家理解。夜间巡逻不严密可以送进去本店蜂鸟专送，送餐到位。蜂鸟专送解决了超时和送餐不上楼的问题。给大家带来了无限方便。欢迎同学们朋友们踊跃订购，本店承担了一定的配送费用，也是为了大家准时收到餐品，不耽误工作与学习。">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/xinshaungyu.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20">
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="绝味鸭脖(虎石台店)"
+                                width="200"
+                                trigger="hover"
+                                content="----够味才痛快,有吃才有味">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/juewei.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="杜大叔财富铁板炒饭"
+                                width="200"
+                                trigger="hover"
+                                content="----原财富广场铁板炒饭，本店以经济实惠为主在虎石台地区做了十年之久，有着良好的口碑，感谢各位老铁的大力支持">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/dudashu.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="呀披萨(虎石台店)"
+                                width="200"
+                                trigger="hover"
+                                content="----公告~本店出餐披萨品相完好，如外卖送到餐损，餐洒，请致电客服投诉骑手赔你餐品原价">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/yapisa.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="春饼家常菜"
+                                width="200"
+                                trigger="hover"
+                                content="----本店由蜂鸟专送配送，都可送上楼，费用已由我家承担，在此感谢亲们对本店一直以来的支持和信任，我们坚持追求用心，责任，高品质，高效率，让亲们看到我们的努力，打心底觉得吃的安全，放心，我们一定尽心为您服务。感谢大家的支持和光顾。">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/chunbing.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20">
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="东东飘香鱼"
+                                width="200"
+                                trigger="hover"
+                                content="----够味才痛快,有吃才有味">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/dongdongdepiaoxiangyu.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="董记海城馅饼"
+                                width="200"
+                                trigger="hover"
+                                content="----原财富广场铁板炒饭，本店以经济实惠为主在虎石台地区做了十年之久，有着良好的口碑，感谢各位老铁的大力支持">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/dongji.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="虾麦盖浇饭店"
+                                width="200"
+                                trigger="hover"
+                                content="----公告~本店出餐披萨品相完好，如外卖送到餐损，餐洒，请致电客服投诉骑手赔你餐品原价">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/gaijiaofan.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="郭记早餐面馆"
+                                width="200"
+                                trigger="hover"
+                                content="----本店由蜂鸟专送配送，都可送上楼，费用已由我家承担，在此感谢亲们对本店一直以来的支持和信任，我们坚持追求用心，责任，高品质，高效率，让亲们看到我们的努力，打心底觉得吃的安全，放心，我们一定尽心为您服务。感谢大家的支持和光顾。">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/guoji.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20">
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="肯德基宅急送"
+                                width="200"
+                                trigger="hover"
+                                content="----够味才痛快,有吃才有味">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/kendeji.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="贱贱的烤冷面"
+                                width="200"
+                                trigger="hover"
+                                content="----原财富广场铁板炒饭，本店以经济实惠为主在虎石台地区做了十年之久，有着良好的口碑，感谢各位老铁的大力支持">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/jianjiandezhalengmian.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="麻辣速递酸辣苕粉 "
+                                width="200"
+                                trigger="hover"
+                                content="----公告~本店出餐披萨品相完好，如外卖送到餐损，餐洒，请致电客服投诉骑手赔你餐品原价">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/malasudi.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="猫小姐水果捞"
+                                width="200"
+                                trigger="hover"
+                                content="----本店由蜂鸟专送配送，都可送上楼，费用已由我家承担，在此感谢亲们对本店一直以来的支持和信任，我们坚持追求用心，责任，高品质，高效率，让亲们看到我们的努力，打心底觉得吃的安全，放心，我们一定尽心为您服务。感谢大家的支持和光顾。">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/maoxiaojie.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+            </el-row>
+            <el-row :gutter="20">
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="美餐时间"
+                                width="200"
+                                trigger="hover"
+                                content="----够味才痛快,有吃才有味">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/meicanshijian.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="摩登小馋猫土豆粉"
+                                width="200"
+                                trigger="hover"
+                                content="----原财富广场铁板炒饭，本店以经济实惠为主在虎石台地区做了十年之久，有着良好的口碑，感谢各位老铁的大力支持">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/modeng.jpg" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="凉皮时刻 "
+                                width="200"
+                                trigger="hover"
+                                content="----公告~本店出餐披萨品相完好，如外卖送到餐损，餐洒，请致电客服投诉骑手赔你餐品原价">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/liangpi.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content">
+                        <el-popover
+                                placement="right"
+                                title="饭小柒的店"
+                                width="200"
+                                trigger="hover"
+                                content="----17696647091一 下单加微 有神密好礼">
+                            <el-button slot="reference" style="background-color: #fff">
+                                <a href="gwc.html" target="_blank"><img src="img/fanxiaoqi.png" width="100%"/></a>
+                            </el-button>
+                        </el-popover>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
+    </div>
+    <div class="jiazai">
+        <div class="jiazaigengduo">
+            <a href="#" style="text-decoration: none ; color: #8c939d"><p style="margin: 0px auto;font-size: 1vw;text-align: center">点击加载更多商家...</p></a>
+        </div>
+    </div>
+
+    <hr style="margin: 24px auto">
+    <div id="footer">
+        <div id="footer-left">
+            <div class="footer-div">
+                <span>用户帮助</span><br>
+                <a href="" style="font-size: 0.5px">我的客服</a>
+            </div>
+            <div class="footer-div">
+                <span>商务合作</span><br>
+                <a href="" style="font-size: 0.5px">我要开店</a><br>
+                <a href="" style="font-size: 0.5px">加盟指南</a><br>
+                <a href="" style="font-size: 0.5px">市场合作</a><br>
+                <a href="" style="font-size: 0.5px">开放平台</a>
+            </div>
+            <div class="footer-div">
+                <span>关于我们</span><br>
+                <a href="" style="font-size: 0.5px">饿了么介绍</a><br>
+                <a href="" style="font-size: 0.5px">加入我们</a><br>
+                <a href="" style="font-size: 0.5px">联系我们</a><br>
+                <a href="" style="font-size: 0.5px">规则中心</a><br>
+                <a href="" style="font-size: 0.5px">隐私政策</a>
+            </div>
+        </div>
+        <div id="footer-right">
+            <div id="footer-right1">
+                <span style="font-size: 0.8vw">24小时客服热线：10105757</span><br>
+                <span style="font-size: 0.8vw">关注我们:</span>
+                <a><img style="width: 1.5vw;height: 1.5vw" src="img/wexin.PNG" alt=""></a>
+                <a><img style="width: 1.5vw;height: 1.5vw" src="img/weibo.PNG" alt=""></a>
+            </div>
+            <div style="width: 50%;float: left">
+                <a><img style="width: 35%;float: left" src="img/appqc.95e532.png"></a>
+                <h3 style="float: left;margin-top: 5%;margin-left: 10%; font-size: 1vw;font-weight: bold">下载手机版</h3><br><br><br>
+                <span style="color: gray;font-size: 0.5vw;margin-left: 10%">扫一扫，手机订餐方便</span>
+            </div>
+        </div>
+    </div>
+    <div id="footer-test">
+        <div id="footer-a">
+            <br>
+            <span style="color: black;font-size: 0.5vw" >所有方：上海拉扎斯信息科技有限公司&nbsp;|&nbsp;营业执照</span>
+        </div>
+        <div id="footer-b">
+            <span style="font-size: 0.5vw">增值信息业务许可证:</span>
+            <a href="" style="font-size: 0.5vw">沪B2-20150033</a>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <a href="" style="font-size: 0.5vw">沪ICP备09007032</a>
+            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <a href="" style="font-size: 0.5vw">上海工商行政管理</a>
+            <span style="font-size: 0.5vw">Copyright ?2008-2018 上海拉扎斯信息科技有限公司, All Rights Reserved.</span>
+        </div>
+        <div id="foot"><a href="#"><img style="width: 50%;height: 50%" src="img/picp_bg.e373b3.jpg"></a></div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: ".daohang",
+        data() {
+            return {
+                activeIndex: '1',
+                activeIndex2: '1'
+            };
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            }
+        }
+    })
+    new Vue({
+        el: ".toolbar-middle"
+    })
+    new Vue({
+        el: ".toolbar-bottom"
+    })
+    new Vue({
+        el: ".zuobian",
+        data() {
+            return {
+                input2: '',
+            }
+        }
+    })
+    new Vue({
+        el: ".shangjiafenlei"
+    })
+    new Vue({
+        el: ".shangpinfenlei"
+    })
+
+</script>
+</body>
+</html>

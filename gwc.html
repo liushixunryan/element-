@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="css/css2.css">
+    <style>
+        #footer {
+            margin: 0px auto;
+            clear: both;
+            width: 80%;
+            padding-top: 1px;
+        }
+        #footer-left{
+            float: left;
+            width: 50%;
+            padding: 6px;
+            box-sizing: border-box;
+        }
+        .footer-div{
+            font-size: 0.8vw;
+            float: left;
+            margin-top: 1%;
+            margin-right: 20%;
+        }
+        .footer-div a{
+            color: darkgray;
+            font-size: 1.1vw;
+        }
+        #footer-right{
+            box-sizing: border-box;
+            border-left: 1px lightgray solid;
+            float: left;
+            width: 50%;
+            padding: 6px;
+        }
+        #footer-right1{
+            width: 50%;
+            float: left;
+            color: gray;
+            font-size: 1.2vw;
+            margin-top: 2vw;
+        }
+        #footer-a span {
+            color: gray;
+            font-size: 1vw;
+        }
+
+        #footer-b a {
+            color: darkgray;
+            font-size: 1vw;
+        }
+
+        #footer-b span {
+            color: darkgray;
+            font-size: 1vw;
+        }
+
+        #foot {
+            margin: 12px auto;
+            width: 8vw;
+            height: 3vw;
+        }
+        #footer-test{
+            background: whitesmoke;
+            text-align: center;
+            margin-top: 150px;
+            width: 100%;
+            height: 120px;
+        }
+    </style>
+</head>
+<body >
+
+<div id="dx">
+    <div id="gwc" style="position: relative">
+        <div class="line"></div>
+        <el-menu
+                :default-active="activeIndex2"
+                class="el-menu-demo"
+                mode="horizontal"
+                @select="handleSelect"
+                text-color="#fff"
+                id="top1"
+        >
+            <el-menu-item index="1" ><span style="font-size:30px ;font-weight: bold ;color: white"><img src="img/loading.0e7b2e.gif">饿了么</span></el-menu-item>
+            <el-menu-item index="4"><a href="https://www.ele.me" target="_blank" style="text-decoration: none">首 页</a></el-menu-item>
+            <el-menu-item><el-menu-item index="4"><a href="https://www.ele.me" target="_blank" style="text-decoration: none">我的订单</a></el-menu-item></el-menu-item>
+            <el-menu-item><el-menu-item index="4"><a href="https://www.ele.me" target="_blank" style="text-decoration: none">加盟合作</a></el-menu-item></el-menu-item>
+            <el-menu-item><el-menu-item index="4"><a href="https://www.ele.me" target="_blank" style="text-decoration: none">我的客服</a></el-menu-item></el-menu-item>
+
+            <a style="position: absolute;right: 20% ;top: 30%;text-decoration: none ;color: white" href="#"><i class="el-icon-mobile-phone"></i>手机应用</a>
+
+            <a style="position: absolute;right: 30% ;top: 30%;text-decoration: none ;color: white" href="#">规则中心</a>
+            <a style="position: absolute ;right: 0px ;top: 30% " >
+                <el-dropdown :hide-on-click="false">
+        <span class="el-dropdown-link">
+        下拉菜单 <i class="el-icon-arrow-down el-icon--right"></i>
+        </span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item><span class="glyphicon glyphicon-user" aria-hidden="true"></span>黄金糕</el-dropdown-item>
+                        <el-dropdown-item><i class="el-icon-star-on"></i>狮子头</el-dropdown-item>
+                        <el-dropdown-item><i class="el-icon-location"></i>螺蛳粉</el-dropdown-item>
+                        <el-dropdown-item disabled><i class="el-icon-setting"></i>双皮奶</el-dropdown-item>
+                        <el-dropdown-item divided><span class="glyphicon glyphicon-off" aria-hidden="true"></span>蚵仔煎</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </a>
+        </el-menu>
+
+    </div>
+    <div  id="gwc2">
+        <div >
+            <img src="" style="border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;"id="maoxiaojie">
+
+            <span style="color: #fff ;font-size: 2vw">猫小姐水果捞</span>
+        </div>
+        <div style="position: absolute;right: 0px;top: 0px;text-align: center;width: 5% ;height: 5%;color: white">
+            <span class="glyphicon glyphicon-heart" aria-hidden="true" style="text-align: center"></span><br>
+            收藏
+        </div>
+        <div style="position: absolute;right: 10%;top: 15%;text-align: center;width: 5% ;height: 5%;color: white">
+            <p>平均送达速度</p>
+            <p>30分钟</p>
+        </div>
+        <div style="position: absolute;right: 25%;top: 15%;text-align: center;width: 5% ;height: 5%;color: white">
+
+            <p>平均送达速度</p>
+            <p>30分钟</p>
+        </div>
+        <div style="position: absolute;right: 35%;top: 20%;text-align: center;width: 5% ;height: 5%;color: white">
+            <p>配送费</p>
+            <p>配送费￥2</p>
+        </div>
+    </div>
+</div>
+<div id="gwc3">
+    <div >
+       <div style="width: 80% ;padding-top: 1%;margin: 0px auto;" >
+           <template>
+               <el-tabs v-model="activeName" @tab-click="handleClick">
+                   <el-tab-pane label="所有商品" name="first" >
+                       <div >
+                           <div style="position: fixed;bottom: 0px;right:0px ;width: 20%;height: 90px;border-top: 1px solid #0c65d2">
+                               <div style="height: 50%;padding-top: 15px"><span>购物车<span style="color: #0c65d2">[清空]</span></span></div>
+                                 <div style="background-color:dimgrey;height: 50%;width:60%;float: left;padding-top: 15px">
+                                     <span class="glyphicon glyphicon-shopping-cart"style="color: white"></span>
+                                     <a style="color: #999999">配送费2.5</a>
+                                 </div>
+                               <a href="jiesuan.html">
+                               <div style="background-color: #5daf34;padding-top: 15px;height: 50%;width:40%;float: left;font-weight: bold;color: #fff" >
+                                   去结算
+                               </div>
+                               </a>
+
+                           </div>
+                           <div style="background: white ;width: 70%;height: 150px">
+                               <el-radio-group v-model="radio3" class="jlgj">
+                                   <el-radio-button  label="热销" class="jlgj"></el-radio-button>
+                                   <el-radio-button label="优惠" class="jlgj"></el-radio-button>
+                                   <el-radio-button label="浇汁盖饭" class="jlgj"></el-radio-button>
+                                   <el-radio-button label="烤饼拼饭" class="jlgj"></el-radio-button>
+                                   <el-radio-button label="秘制拌饭" class="jlgj"></el-radio-button>
+                                   <el-radio-button label="精致炒饭" class="jlgj"></el-radio-button>
+                                   <el-radio-button label="关关雎鸠" class="jlgj"></el-radio-button>
+                                   <el-radio-button label="情侣套餐" class="jlgj"></el-radio-button>
+                                   <el-radio-button label="馋嘴小吃" class="jlgj"></el-radio-button>
+                               </el-radio-group>
+                           </div>
+                           <div  style="margin-top: 40px;width: 70% ">
+                               <div class="kuang1">
+                                   <el-row>
+                                       <el-col :span="23" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2: 0">
+                                           <el-card :body-style="{ padding: '0px' } " id="sb">
+                                               <img src="img/labixiaoxin.webp" class="image" style="width: 30%;display: inline;  ">
+                                               <div style="padding: 20px;display: inline ">
+                                                   <div style="display: inline;position: absolute;right: 165px;top: 40px;font-weight: bold;font-size: 1vw">
+                                                       <span>蜡笔小新小圆子</span>
+                                                       <br>
+                                                       <el-rate
+                                                               v-model="value5"
+                                                               disabled
+                                                               show-score
+                                                               text-color="#ff9900"
+                                                               score-template="{value}"class="sllb">
+
+                                                       </el-rate>
+
+                                                   </div>
+
+
+
+                                                   <div class="bottom clearfix" style="display: inline">
+                                                       <time class="time">{{ currentDate }}</time>
+                                                       <el-button type="primary"  class="button">加入购物车</el-button>
+                                                   </div>
+                                               </div>
+                                           </el-card>
+                                       </el-col>
+                                   </el-row>
+                               </div>
+                               <div class="kuang1" >
+                                   <el-row>
+                                       <el-col :span="23" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2: 0">
+                                           <el-card :body-style="{ padding: '0px' } " id="sb">
+                                               <img src="img/caomeishuiguo.webp" class="image" style="width: 30%;height: 100%;display: inline;">
+                                               <div style="padding: 20px;display: inline ">
+                                                   <div style="display: inline;position: absolute;right: 165px;top: 40px;font-weight: bold;font-size: 1vw">
+                                                       <span>秘制草莓酸奶水果捞</span>
+                                                       <br>
+                                                       <el-rate
+                                                               v-model="value5"
+                                                               disabled
+                                                               show-score
+                                                               text-color="#ff9900"
+                                                               score-template="{value}"class="sllb">
+
+                                                       </el-rate>
+
+                                                   </div>
+                                                   <div class="bottom clearfix" style="display: inline">
+                                                       <time class="time">{{ currentDate }}</time>
+                                                       <el-button type="primary"  class="button">加入购物车</el-button>
+                                                   </div>
+                                               </div>
+                                           </el-card>
+                                       </el-col>
+                                   </el-row>
+                               </div>
+                               <div class="kuang1">
+                                   <el-row>
+                                       <el-col :span="23" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2: 0">
+                                           <el-card :body-style="{ padding: '0px' } " id="sb">
+                                               <img src="img/changxian.webp" class="image" style="width: 30%;display: inline;">
+                                               <div style="padding: 20px;display: inline ">
+                                                   <div style="display: inline;position: absolute;right: 165px;top: 40px;font-weight: bold;font-size: 1vw">
+                                                       <span>尝鲜原味酸奶水果捞350ml</span>
+                                                       <br>
+                                                       <el-rate
+                                                               v-model="value5"
+                                                               disabled
+                                                               show-score
+                                                               text-color="#ff9900"
+                                                               score-template="{value}"class="sllb">
+
+                                                       </el-rate>
+
+                                                   </div>
+
+
+
+                                                   <div class="bottom clearfix" style="display: inline">
+                                                       <time class="time">{{ currentDate }}</time>
+                                                       <el-button type="primary"  class="button">加入购物车</el-button>
+                                                   </div>
+                                               </div>
+                                           </el-card>
+                                       </el-col>
+                                   </el-row>
+                               </div>
+                               <div class="kuang1">
+                                   <el-row>
+                                       <el-col :span="23" v-for="(o, index) in 1" :key="o" :offset="index > 0 ? 2: 0">
+                                           <el-card :body-style="{ padding: '0px' } " id="sb">
+                                               <img src="img/mangguo'.webp" class="image" style="width: 30%;display: inline;">
+                                               <div style="padding: 20px;display: inline ">
+                                                   <div style="display: inline;position: absolute;right: 165px;top: 40px;font-weight: bold;font-size: 1vw">
+                                                       <span>芒果奶昔400ml</span>
+                                                       <br>
+                                                       <el-rate
+                                                               v-model="value5"
+                                                               disabled
+                                                               show-score
+                                                               text-color="#ff9900"
+                                                               score-template="{value}"class="sllb">
+                                                       </el-rate>
+                                                   </div>
+
+
+
+                                                   <div class="bottom clearfix" style="display: inline">
+                                                       <time class="time">{{ currentDate }}</time>
+                                                       <el-button type="primary"  class="button">加入购物车</el-button>
+                                                   </div>
+                                               </div>
+                                           </el-card>
+                                       </el-col>
+                                   </el-row>
+                               </div>
+                           </div>
+                               </div>
+                   </el-tab-pane>
+                   <el-tab-pane label="|" name="first" disabled>
+                   </el-tab-pane>
+                   <el-tab-pane label="评价" name="second">
+                       <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
+                           <el-tab-pane label="全部" name="first">暂无评价</el-tab-pane>
+                           <el-tab-pane label="满意" name="second">暂无评价</el-tab-pane>
+                           <el-tab-pane label="不满意" name="third">暂无评价</el-tab-pane>
+                           <el-tab-pane label="有图" name="fourth">暂无评价</el-tab-pane>
+                       </el-tabs>
+                   </el-tab-pane>
+                   <el-tab-pane label="|" name="first" disabled>|</el-tab-pane>
+                   <el-tab-pane label="商家资质" name="third">
+                       <div>
+                           <select multiple class="form-control"style="width: 70%;position: relative;">
+                               <option>
+
+                               </option>
+                           </select>
+                       </div>
+                   </el-tab-pane>
+               </el-tabs>
+           </template>
+           <div style="position: absolute;right: 10% ;top:15%;width: 21%  ;">
+               <div  style="background-color:  #0c65d2;height: 40px;padding-top:10px">
+                   <span style="color: white;font-size: 1vw;">商家公告</span>
+               </div>
+               <div   style="height: 20px;background-color: white">
+               </div>
+               <div style="background-color: gainsboro;height: 60px;padding-top: 10px">
+                   <span>配送说明</span>
+                   <p>配送费￥3.5</p>
+               </div>
+               <div >
+                   <el-button plain id="anniu">举报商家</el-button>
+               </div>
+           </div>
+
+       </div>
+            <div style="position: absolute ;right: 10%;top: 2%;width: 20%" >
+                <el-input
+                        placeholder="请输入内容"
+                        prefix-icon="el-icon-search"
+                        v-model="input21">
+                </el-input>
+            </div>
+        </el-menu>
+    </div>
+</div>
+<hr style="margin: 24px auto">
+<div id="footer">
+    <div id="footer-left">
+        <div class="footer-div">
+            <span>用户帮助</span><br>
+            <a href="" style="font-size: 0.5px">我的客服</a>
+        </div>
+        <div class="footer-div">
+            <span>商务合作</span><br>
+            <a href="" style="font-size: 0.5px">我要开店</a><br>
+            <a href="" style="font-size: 0.5px">加盟指南</a><br>
+            <a href="" style="font-size: 0.5px">市场合作</a><br>
+            <a href="" style="font-size: 0.5px">开放平台</a>
+        </div>
+        <div class="footer-div">
+            <span>关于我们</span><br>
+            <a href="" style="font-size: 0.5px">饿了么介绍</a><br>
+            <a href="" style="font-size: 0.5px">加入我们</a><br>
+            <a href="" style="font-size: 0.5px">联系我们</a><br>
+            <a href="" style="font-size: 0.5px">规则中心</a><br>
+            <a href="" style="font-size: 0.5px">隐私政策</a>
+        </div>
+    </div>
+    <div id="footer-right">
+        <div id="footer-right1">
+            <span style="font-size: 0.8vw">24小时客服热线：10105757</span><br>
+            <span style="font-size: 0.8vw">关注我们:</span>
+            <a><img style="width: 1.5vw;height: 1.5vw" src="img/wexin.PNG" alt=""></a>
+            <a><img style="width: 1.5vw;height: 1.5vw" src="img/weibo.PNG" alt=""></a>
+        </div>
+        <div style="width: 50%;float: left">
+            <a><img style="width: 35%;float: left" src="img/appqc.95e532.png"></a>
+            <h3 style="float: left;margin-top: 5%;margin-left: 10%; font-size: 1vw;font-weight: bold">下载手机版</h3><br><br><br>
+            <span style="color: gray;font-size: 0.5vw;margin-left: 10%">扫一扫，手机订餐方便</span>
+        </div>
+    </div>
+</div>
+<div id="footer-test">
+    <div id="footer-a">
+        <br>
+        <span style="color: black;font-size: 0.5vw" >所有方：上海拉扎斯信息科技有限公司&nbsp;|&nbsp;营业执照</span>
+    </div>
+    <div id="footer-b">
+        <span style="font-size: 0.5vw">增值信息业务许可证:</span>
+        <a href="" style="font-size: 0.5vw">沪B2-20150033</a>
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="" style="font-size: 0.5vw">沪ICP备09007032</a>
+        <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+        <a href="" style="font-size: 0.5vw">上海工商行政管理</a>
+        <span style="font-size: 0.5vw">Copyright ?2008-2018 上海拉扎斯信息科技有限公司, All Rights Reserved.</span>
+    </div>
+    <div id="foot"><a href="#"><img style="width: 50%;height: 50%" src="img/picp_bg.e373b3.jpg"></a></div>
+</div>
+</body>
+<script>
+    new Vue({
+        el:'#gwc',
+        data() {
+            return {
+                activeIndex: '1',
+                activeIndex2: '1'
+            };
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            }
+        }
+
+
+    })
+    new Vue({
+        el:'#gwc2'
+    })
+    new Vue({
+        el:'#gwc3',
+        data() {
+            return {
+                value5: 5.0,
+                activeName3:"third",
+                activeName: 'first',
+                visible: false,
+                input21:'',
+                radio3: '上  海',
+                activeName2: 'second',
+
+            };
+        },
+        methods: {
+            handleClick(tab, event) {
+                console.log(tab, event);
+            },
+            methods: {
+                handleClick(tab, event) {
+                    console.log(tab, event);
+                }
+            }
+
+        }
+
+    })
+</script>
+</html>

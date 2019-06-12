@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="css1/css.css">
+</head>
+<body>
+<div id="hh">
+    <el-container>
+        <el-header>
+            <div >
+                <img src="img/J2@~2V0U%5B~%60RS4)8IUW%60%7DEP.png ">
+            </div>
+        </el-header>
+        <el-main>
+            <div style="width: 40%;margin: 0px auto;">
+                <el-input placeholder="手机号" v-model="input10" class="input-with-select" maxlength="11"><el-button slot="append">获取验证码</el-button></el-input>
+
+                <el-input  placeholder="验证码" v-model="input" maxlength="8"></el-input>
+                <div>
+                    新用户登录即自动注册，并表示已同意<span><a style="text-decoration: none;color: cornflowerblue">《用户服务协议》</a></span>
+                </div>
+                <a href="diandan.html" style="text-decoration: none;color: #fff"><el-button type="success" id="slb2">登录</el-button></a>
+            </div>
+
+        </el-main>
+    </el-container>
+</div>
+    <div id="slb3">
+        <p class="jiao">所有放：上海拉扎斯信息科技有限公司</p>
+        <p class="jiao">增值电信业务许可证：<span><a>沪B2-20150033|沪lCP备09007032|上海工商行政管理 Copyright @2008-2017 ele.me All Rights Reserved</a></span></p>
+        <div class="jiao" ><img src="img/picp_bg.e373b3.jpg"></div>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#hh',
+        data() {
+            return {
+                input10: ''
+            }
+
+        }
+    })
+    new Vue({
+        el:"#hh",
+
+        data() {
+        return {
+            input: ''
+        }
+    }
+    })
+</script>
+</html>
